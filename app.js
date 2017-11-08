@@ -11,22 +11,6 @@ app.use(bodyPareser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 
-// Meal.create(
-//     {
-//         name: 'Waffles',
-//         image: 'https://source.unsplash.com/6hxK5l-sHys/400X300',
-//         calorie: 150
-//
-//     }, function(err, meal){
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log('NEWLY CREATED MEAL');
-//             console.log(meal);
-//         }
-//     }
-// );
-
 app.get('/', function(req, res){
     res.render('landing');
 });
@@ -53,7 +37,7 @@ app.post('/meals', function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.redirect('/meals');
+            res.redirect('/index');
         }
     });
 });
