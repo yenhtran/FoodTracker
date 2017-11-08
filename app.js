@@ -9,7 +9,11 @@ var meals = [
     {name: 'banana', image: 'https://source.unsplash.com/sf_1ZDA1YFw/400x300', calorie: 105},
     {name: 'cake', image: 'https://source.unsplash.com/On2VseHUDXw/400x300', calorie: 500},
     {name: 'salad', image: 'https://source.unsplash.com/KRGFXJWIo2Y/400x300', calorie: 150},
-    {name: 'smoothie', image: 'https://source.unsplash.com/m741tj4Cz7M/400x300', calorie: 200}
+    {name: 'smoothie', image: 'https://source.unsplash.com/m741tj4Cz7M/400x300', calorie: 200},
+    {name: 'cookie', image: 'https://source.unsplash.com/OfdDiqx8Cz8/400x300', calorie: 250},
+    {name: 'dumplings', image: 'https://source.unsplash.com/67mdthfNa1Y/400x300', calorie: 175},
+    {name: 'soup', image: 'https://source.unsplash.com/w6ftFbPCs9I/400x300', calorie: 150},
+    {name: 'cookie', image: 'https://source.unsplash.com/OfdDiqx8Cz8/400x300', calorie: 250},
 ];
 
 app.get('/', function(req, res){
@@ -38,4 +42,3 @@ app.listen(8080, function() {
     console.log('UACF app has started...');
 });
 
-// https://source.unsplash.com/OfdDiqx8Cz8/400x300
