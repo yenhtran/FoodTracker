@@ -1,0 +1,9 @@
+<h1>This is the meals page!</h1>
+
+<% meals.forEach(function(meal){ %>
+    <div>
+        <h4><%= meal.name %></h4>
+        <img src="<%= meal.image %>">
+        <p><%= meal.calorie %></p>
+    </div>
+<% }); %>
