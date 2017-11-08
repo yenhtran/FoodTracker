@@ -16,20 +16,23 @@ var mealSchema = new mongoose.Schema({
 
 var Meal = mongoose.model('Meal', mealSchema);
 
-Meal.create(
-    {
-        name: 'Waffles',
-        image: 'https://source.unsplash.com/6hxK5l-sHys/400X300',
-        calorie: 150
+// Meal.create(
+//     {
+//         name: 'Waffles',
+//         image: 'https://source.unsplash.com/6hxK5l-sHys/400X300',
+//         calorie: 150
+//
+//     }, function(err, meal){
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log('NEWLY CREATED MEAL');
+//             console.log(meal);
+//         }
+//     }
+// );
 
-    }, function(err, meal){
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('NEWLY CREATED MEAL');
-            console.log(meal);
-        }
-    });
+// https://source.unsplash.com/xYkQQ2SfPog/400x300
 
 // var meals = [
 //     {name: 'banana', image: 'https://source.unsplash.com/sf_1ZDA1YFw/400x300', calorie: 105},
@@ -53,7 +56,7 @@ app.get('/meals', function (req,res) {
         if(err){
             console.log(err);
         } else {
-            res.render('meals', {meals: allmeals})
+            res.render('index', {meals: allmeals})
         }
     });
 
@@ -77,6 +80,16 @@ app.post('/meals', function(req, res){
 
 app.get('/meals/new', function(req, res) {
     res.render('new.ejs');
+});
+
+app.get('/meals/:id', function(req, res) {
+    Meal.findById(req.params.id, function(err, foundMeal){
+        if(err){
+            console.log(err);
+        } else {
+            res.render('show', {meal: foundMeal});
+        }
+    });
 });
 
 app.listen(8080, function() {
