@@ -2,19 +2,12 @@ var express = require('express'),
     app = express();
     bodyPareser = require('body-parser');
     mongoose = require('mongoose');
+    Meal = require('./models/meal');
 
 mongoose.connect('mongodb://localhost/food_tracker');
 app.use(bodyPareser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
-
-var mealSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    calorie: Number
-});
-
-var Meal = mongoose.model('Meal', mealSchema);
 
 // Meal.create(
 //     {
